@@ -68,8 +68,8 @@ def init():
     time = []
     in_progress = True
     post_message('%s, @channel! Please type !start when everyone\'s here.' % init_greeting)
-    post_message('JIRA Board  %s' % board_name)
-    post_message('JIRA Board - <%s|%r>' % jira_url % board_name)
+    post_message('Let\'s open up the %s in JIRA' % board_name)
+    post_message('%s' % jira_url)
 
 def start():
     global time
