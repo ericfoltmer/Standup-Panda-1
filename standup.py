@@ -24,8 +24,8 @@ ignore_users = os.getenv('IGNORE_USERS', '["heytaco", "standuppanda"]')
 
 init_greeting = os.getenv('INIT_GREETING', 'Good morning')
 start_message = os.getenv('START_MESSAGE', 'What did you work on yesterday? What are you working on today? What, if any, are your blockers?')
-#jira_url = os.getenv('JIRA_URL', '')
-#board_name = os.getenv('BOARD_NAME', '')
+jira_url = os.getenv('JIRA_URL', '')
+board_name = os.getenv('BOARD_NAME', '')
 giphy = True if os.getenv('GIPHY', 'false').lower() == 'true' else False
 
 commands = ['standup','start','cancel','next','skip','table','left','ignore','heed','ignoring','help']
