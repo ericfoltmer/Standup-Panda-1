@@ -90,7 +90,7 @@ def done():
     time.append(datetime.datetime.now())
     standup_time()
     tabled()
-    post_message('Nice job team. Please update status of your assignments in JIRA. \n Bye!')
+    post_message('Nice job team. Please update status of your assignments in JIRA. \n <jira_url> \n Bye!')
     reset()
     
 def reset():
@@ -291,7 +291,7 @@ def main():
     text = request.form.get("text", "")
 
     # find !command, but ignore <!command
-    match = re.findall(r"(?</<)!(\S+)", text)
+    match = re.findall(r"(?<!<)!(\S+)", text)
     if not match: return
 
     command = match[0]
