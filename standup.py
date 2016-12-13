@@ -253,7 +253,7 @@ def giphy(text):
 
 def help(topic=''):
     if topic == '':
-        post_message('Here\'s what I can do for you: \n `!standup` - initiate a new standup \n `!start` - get started with a standup once everyone is ready \n `!cancel` - if you\'d like to stop standup entirely \n `!next` - calls on the next person when you\'re done standing up \n `!skip` - skips someone who isn\'t standing up that day \n `!table` - saves a topic for later discussion. I\'ll list these for you when standup is over \n `!left` - find out who is left in the standup \n `!ignore <username>` - temporarily skip a user during standup for a while \n `!heed <username>` - add an ignored user back, starting with the next standup  \n `!ignoring` -  find out who we\'re skipping over for standups \n You can also ask `!help <command>` at anytime to learn what they do.')
+        post_message('Hi. Here\'s what I can do for you: \n `!standup` - initiate a new standup \n `!start` - get started with a standup once everyone is ready \n `!cancel` - if you\'d like to stop standup entirely \n `!next` - calls on the next person when you\'re done standing up \n `!skip` - skips someone who isn\'t standing up that day \n `!table` - saves a topic for later discussion. I\'ll list these for you when standup is over \n `!left` - find out who is left in the standup \n `!ignore <username>` - temporarily skip a user during standup for a while \n `!heed <username>` - add an ignored user back, starting with the next standup  \n `!ignoring` -  find out who we\'re skipping over for standups \n You can also ask `!help <command>` at anytime to learn what they do.')
         return
         
     topic = topic[1:]
@@ -291,21 +291,21 @@ def main():
     text = request.form.get("text", "")
 
     # find !command, but ignore <!command
-    match = re.findall(r"(?<!<)!(\S+)", text)
+    match = re.findall(r"(?<!<)@standuppanda(\S+)", text)
     if not match: return
 
     command = match[0]
-    args = text.replace("!%s" % command, '')
+    args = text.replace("@standuppanda%s" % command, '')
     command = command.lower()
     
     if command not in commands:
         if giphy:
             giphy(text[1:])
         else:
-            post_message('Not sure what "%s" is.' % command)
+            post_message('Not sure what you mean homey. Here\'s a giphy instead.' % command)
         return json.dumps({ })
     elif not in_progress and command != 'standup' and command != 'help' and command != 'ignore' and command != 'heed' and command != 'ignoring':
-        post_message('Looks like standup hasn\'t started yet. Type !standup.')
+        post_message('Looks like standup hasn\'t started yet. Type !standup to get one going.')
         return json.dumps({ })
         
     if command == 'standup':
