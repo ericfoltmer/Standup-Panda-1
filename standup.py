@@ -67,7 +67,9 @@ def init():
     topics = []
     time = []
     in_progress = True
-    post_message('%s, @channel! Please type !start when you are ready to stand up.' % init_greeting)
+    post_message('%s, @channel! Please type !start when everyone\'s here.' % init_greeting)
+    post_message('JIRA Board - %s' % board_name)
+    post_message('JIRA Board - <%s|%s>' % jira_url % board_name)
 
 def start():
     global time
@@ -90,7 +92,7 @@ def done():
     time.append(datetime.datetime.now())
     standup_time()
     tabled()
-    post_message('Nice job team. Last step, please update status of your tasks in JIRA: \n %s \n Bye!' % jira_url)
+    post_message('Nice job team. Last step, please update status of your tasks in JIRA \n %s \n Bye!' % jira_url)
     reset()
     
 def reset():
