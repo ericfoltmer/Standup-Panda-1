@@ -291,11 +291,11 @@ def main():
     text = request.form.get("text", "")
 
     # find !command, but ignore <!command
-    match = re.findall(r"(?<!<)@standuppanda(\S+)", text)
+    match = re.findall(r"(?<!<)@standuppanda (\S+)", text)
     if not match: return
 
     command = match[0]
-    args = text.replace("@standuppanda%s" % command, '')
+    args = text.replace("!%s" % command, '')
     command = command.lower()
     
     if command not in commands:
