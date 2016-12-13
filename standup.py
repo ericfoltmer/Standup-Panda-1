@@ -20,7 +20,7 @@ slack = Slacker(os.getenv('TOKEN'))
 username = os.getenv('USERNAME', 'Standup Panda')
 icon_emoji = os.getenv('ICON_EMOJI', ':panda_face:')
 channel = os.getenv('CHANNEL', '#standup')
-ignore_users = os.getenv('IGNORE_USERS', '["heytaco"]')
+ignore_users = os.getenv('IGNORE_USERS', '["heytaco", "standuppanda"]')
 
 init_greeting = os.getenv('INIT_GREETING', 'Good morning')
 start_message = os.getenv('START_MESSAGE', 'What did you work on yesterday? What are you working on today? What, if any, are your blockers?')
@@ -291,7 +291,7 @@ def main():
     text = request.form.get("text", "")
 
     # find !command, but ignore <!command
-    match = re.findall(r"(?<!<)!(\S+)", text)
+    match = re.findall(r"(?</<)!(\S+)", text)
     if not match: return
 
     command = match[0]
