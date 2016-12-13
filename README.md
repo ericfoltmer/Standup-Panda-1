@@ -29,8 +29,8 @@ The container itself can be deployed to any Docker compatible host.
    - `INIT_GREETING`: the way Standup Panda greets you when a standup is initialized. (optional; defaults to `'Good morning'`)
    - `START_MESSAGE`: the instructions Standup Panda issues when a standup starts. (optional; defaults to `'What did you work on yesterday? What are you working on today? What, if any, are your blockers?'`)
    - `GIPHY`: a string representing a boolean of whether you want to use Giphy on queries Standup Panda doesn't understand. (optional; defaults to `FALSE`)
-   - 'JIRA_URL': a link to view the relevant scrum / kanban board so users can review issues during standup (optional; defaults to `''`)
-   - 'BOARD_NAME': a name for your scrum board (optional; defaults to `''`)
+   - `JIRA_URL`: a link to view the relevant scrum / kanban board so users can review issues during standup (optional; defaults to `''`)
+   - `BOARD_NAME`: a name for your scrum board (optional; defaults to `''`)
 
 6. Add the URL where the web app is deployed as an [outgoing webhook](https://my.slack.com/services/new/outgoing-webhook) in Slack. Don't forget the trailing `/`!
 7. Type `!standup` in your chosen channel to start a new standup. (Need help? Type `!help`.)
