@@ -253,7 +253,7 @@ def giphy(text):
 
 def help(topic=''):
     if topic == '':
-        post_message('All of my commands begin with a !. They are `!standup`, !start, !cancel, !next, !skip, !table, !left, !ignore, !heed, and !ignoring.\nAsk me "!help <command> to learn what they do.')
+        post_message('Hi. Here\'s what I can do for you: \n `!standup` - initiate a new standup \n `!start` - get started with standup once everyone is ready \n, `!cancel` - if you\'d like to stop standup entirely \n `!next` - calls on the next person when you\'re done standup up \n `!skip` - skips someone who isn\'t standing up that day \n `!table` - saves a topic for later discussion. I\'ll list these for you when standup is over \n `!left` - to find out who is left in the standup \n `!ignore` - type !ignore <username> to temporarily skip a user during standup for a while \n `!heed` - type !heed <username> to add an ignored user back, starting with the next standup  \n `!ignoring` -  to find out who we\'re skipping over for standups \n You can also ask me `!help <command>` to learn what they do.')
         return
         
     topic = topic[1:]
