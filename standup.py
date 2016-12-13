@@ -67,15 +67,15 @@ def init():
     topics = []
     time = []
     in_progress = True
-    post_message('%s, @channel! Please type !start when everyone\'s here.' % init_greeting)
-    post_message('If you\'d like to open the %s board in JIRA, click the link below' % board_name)
+    post_message('%s, @channel! Please type !start when you are ready to begin standup.' % init_greeting)
+    post_message('If you\'d like to open the %s board in JIRA, click on the link' % board_name)
     post_message('%s' % jira_url)
 
 def start():
     global time
     
     if len(time) != 0:
-        post_message('But we\'ve already started!')
+        post_message('We\'ve already started!')
         return
     time.append(datetime.datetime.now())
     post_message('Let\'s get started! %s\nWhen you\'re done, please type !next' % start_message)
