@@ -90,7 +90,7 @@ def done():
     time.append(datetime.datetime.now())
     standup_time()
     tabled()
-    post_message('Nice job team. Please update status of your assignments in JIRA. \n <jira_url> \n Bye!')
+    post_message('Nice job team. Please update status of your assignments in JIRA. \n %s \n Bye!' % jira_url)
     reset()
     
 def reset():
