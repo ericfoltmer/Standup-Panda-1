@@ -24,8 +24,8 @@ ignore_users = os.getenv('IGNORE_USERS', '["heytaco"]')
 
 init_greeting = os.getenv('INIT_GREETING', 'Good morning')
 start_message = os.getenv('START_MESSAGE', 'What did you work on yesterday? What are you working on today? What, if any, are your blockers?')
-jira_url = os.getenv('JIRA_URL', '')
-board_name = os.getenv('BOARD_NAME', '')
+#jira_url = os.getenv('JIRA_URL', '')
+#board_name = os.getenv('BOARD_NAME', '')
 giphy = True if os.getenv('GIPHY', 'false').lower() == 'true' else False
 
 commands = ['standup','start','cancel','next','skip','table','left','ignore','heed','ignoring','help']
@@ -67,7 +67,7 @@ def init():
     topics = []
     time = []
     in_progress = True
-    post_message('%s, @channel! Please type !start when you are ready to stand up. \n JIRA board: \n' <jira_url|board_name> % init_greeting)
+    post_message('%s, @channel! Please type !start when you are ready to stand up.' % init_greeting)
 
 def start():
     global time
@@ -90,7 +90,7 @@ def done():
     time.append(datetime.datetime.now())
     standup_time()
     tabled()
-    post_message('Nice job team. Please update status for issues.\n' <jira_url> '\n' 'Bye!')
+    post_message('Nice job team. Please update status of your assignments in JIRA. \n Bye!')
     reset()
     
 def reset():
