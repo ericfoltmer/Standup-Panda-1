@@ -1,1 +1,1 @@
-from morgenbot import app as application
+from standup import app as application
