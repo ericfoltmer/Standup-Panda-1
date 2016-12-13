@@ -253,7 +253,7 @@ def giphy(text):
 
 def help(topic=''):
     if topic == '':
-        post_message('My commands are !standup, !start, !cancel, !next, !skip, !table, !left, !ignore, !heed, and !ignoring.\nAsk me "!help <command> to learn what they do.')
+        post_message('All of my commands begin with a !. They are `!standup`, !start, !cancel, !next, !skip, !table, !left, !ignore, !heed, and !ignoring.\nAsk me "!help <command> to learn what they do.')
         return
         
     topic = topic[1:]
